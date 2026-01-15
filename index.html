@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>トップページ - 大和田町会</title>
+    <!-- CSSの読み込み -->
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <!-- ナビゲーションメニュー -->
+    <nav>
+        <ul>
+            <li><a href="index.html">トップページ</a></li>
+            <li><a href="map.html">マップ</a></li>
+            <li><a href="sosiki.html">町会組織</a></li>
+            <li><a href="schedule.html">年間スケジュール</a></li>
+            <li><a href="news.html">町会ニュース</a></li>
+            <li><a href="custom3.html">会館使用状況</a></li>
+            <li><a href="policy.html">各種行事写真</a></li>
+            <li><a href="custom4.html">議事録</a></li>
+            <li><a href="contact1.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- 見出し -->
+        <div class="square-title">
+            
+        </div>
+        
+        <!-- 段落 -->
+        <p>大和田町会のホームページへようこそ。地域の皆様への連絡事項やイベント情報をお知らせします。</p>
+        <p>住みよい街づくりを目指して活動しています。</p>
+        <p style="font-weight: bold;">基本コンセプト</p>
+        <p>「安心・安全・明るい町づくり」をモットーに、住民同士の助け合いを大切にしています。</p>
+
+        <p>地域の伝統を守りつつ、新しい世代とも協力して活動を行っています。</p>
+
+        <!-- ボタン -->
+        <button onclick="toggleNews()">お知らせを確認</button>
+
+        <!-- お知らせエリア -->
+        <div id="news-area" style="display: none; margin-top: 20px;">
+            <div id="news-list" class="qa-list-container"></div>
+            <div class="contact-form-container" style="border-left: 5px solid #ff9800;">
+                <h3>お知らせ投稿（管理者用）</h3>
+                <textarea id="news-content-input" placeholder="お知らせ内容を入力してください"></textarea>
+                <div style="margin-bottom: 10px;">
+                    <label><input type="checkbox" id="news-important"> 重要なお知らせとしてマーク</label>
+                </div>
+                <div class="form-buttons">
+                    <button onclick="addNews()">投稿</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <p>
+            <a href="kaisoku.html">会則（細則）</a> |
+            <a href="custom1.html">ブロック長・組長について</a> |
+            <a href="custom2.html">会館利用規定</a> |
+            <a href="privacy.html">町会名簿について</a> |
+            <a href="contact.html">関連先ホームページ</a>
+        </p>
+        <p>&copy; 2026 大和田町会 All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScriptの読み込み -->
+    <script src="script.js"></script>
+</body>
+</html>

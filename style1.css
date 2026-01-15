@@ -1,0 +1,318 @@
+/* 
+  style.css
+  サイト全体のデザインを定義するファイルです。
+  ライトグリーン(#e8f5e9, #66bb6a等)を基調としています。
+*/
+
+/* ページ全体の基本設定 */
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background-color: #e8f5e9; /* 薄い緑色の背景 */
+    color: #333; /* 文字色は濃いグレー */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ヘッダー（サイトタイトル部分） */
+header {
+    background-color: #66bb6a; /* メインの緑色 */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* ナビゲーションメニュー */
+nav {
+    background-color: #43a047; /* 少し濃い緑 */
+}
+
+nav ul {
+    list-style-type: none; /* リストの・を消す */
+    margin: 0;
+    padding: 0;
+    display: flex; /* 横並びにする */
+    flex-wrap: wrap; /* 画面幅が狭いときは折り返す */
+    justify-content: center; /* 中央寄せ */
+}
+
+nav li {
+    margin: 0;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none; /* 下線を消す */
+    font-size: 14px;
+}
+
+/* マウスを乗せたときの色変化 */
+nav li a:hover {
+    background-color: #2e7d32;
+}
+
+/* メインコンテンツエリア */
+main {
+    max-width: 900px;
+    margin: 20px auto; /* 中央配置 */
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px; /* 角を丸く */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 影をつける */
+}
+
+/* ボタンのデザイン */
+button {
+    background-color: #66bb6a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #43a047;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e8f5e9;
+    color: #1b5e20; /* 濃い緑に変更 */
+    font-size: 14px; /* 少し大きく */
+    font-weight: bold; /* 太字にする */
+}
+
+/* フッター内のリンク */
+footer a {
+    color: #555;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* トップページ中央の正方形タイトル */
+.square-title {
+    color: white;
+    width: 440px;
+    height: 220px; /* 幅と同じにして正方形にする */
+    margin: 10px auto 30px; /* 中央寄せ */
+    display: flex; /* 中身を中央揃えにする設定 */
+    flex-direction: column; /* 縦並び */
+    justify-content: center; /* 上下中央 */
+    align-items: center; /* 左右中央 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* 影をつけて立体的に */
+    text-align: center;
+    border-radius: 20px; /* 角を丸くする */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* アニメーションの設定 */
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.square-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image/top_img.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+.square-title::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image/kaikan_img1.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: fadeImg 6s infinite;
+}
+
+@keyframes fadeImg {
+    0%, 45% { opacity: 0; }
+    55%, 95% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* マウスを乗せたときのアニメーション */
+.square-title:hover {
+    transform: translateY(-10px); /* 上に少し浮き上がる */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4); /* 影を濃くして浮遊感を強調 */
+}
+
+.square-title h2 {
+    font-size: 32px;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.square-title p {
+    margin: 0;
+    font-size: 56px;
+    font-family: "Brush Script MT", cursive; /* 筆記体 */
+    color: #fff59d; /* 薄い黄色でアクセント */
+    opacity: 1;
+    transform: rotate(-10deg);
+}
+
+/* テキストファイル表示エリア */
+.text-viewer {
+    width: 100%;
+    height: 400px; /* 高さを指定 */
+    border: 1px solid #ccc; /* 枠線 */
+    border-radius: 4px;
+    background-color: #fafafa; /* 薄いグレーの背景 */
+    padding: 10px;
+    box-sizing: border-box; /* 枠線を含めたサイズ計算 */
+    font-family: monospace; /* 等幅フォントで見やすく */
+}
+
+/* お問い合わせフォームと掲示板 */
+.contact-form-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+.contact-form-container textarea {
+    height: 100px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* ボタンを右寄せ */
+}
+
+.secondary-btn {
+    background-color: #757575;
+}
+
+.secondary-btn:hover {
+    background-color: #616161;
+}
+
+/* 質問リスト・お知らせリスト */
+.qa-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* リストの背景色を交互に変える（偶数番目を薄い緑に） */
+.qa-item:nth-child(even) {
+    background-color: #f1f8e9;
+}
+
+.qa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.qa-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.qa-name {
+    font-weight: bold;
+    color: #1b5e20;
+    margin-right: 10px;
+}
+
+.qa-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.qa-content {
+    font-size: 16px;
+    margin-bottom: 15px;
+    white-space: pre-wrap; /* 改行を反映 */
+}
+
+.qa-actions {
+    text-align: right;
+}
+
+.edit-btn {
+    background-color: #4caf50; /* 緑色 */
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #388e3c;
+}
+
+.delete-btn {
+    background-color: #e53935;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.delete-btn:hover {
+    background-color: #c62828;
+}
+
+/* お知らせの重要ラベル */
+.news-label-important {
+    background-color: #e53935; /* 赤色 */
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* 重要なお知らせの本文テキスト */
+.news-text-orange {
+    color: #e65100; /* 濃いオレンジ */
+    font-weight: bold;
+}
